@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>CoAP interface</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="container">
+            <h1 class="text-center"> Projeto IC CoAP </h1>
+        </div>
+
+        <div class="container">
+            <form>
+                <div class="mb-3">
+                    <span class="badge text-bg-info">IPV6</span>
+                    <label for="BoardInputIP" class="form-label">Board IP</label>
+                    <input type="text" class="form-control" id="BoardInputIP" aria-describedby="boardHelp" placeholder="Example: bbbb::12:4b00:2f4:ac09">
+                    <div id="boardHelp" class="form-text">Please put your board IP.</div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioGET" value="get">
+                        <label class="form-check-label" for="inlineRadioGET">GET</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioPUT" value="put">
+                        <label class="form-check-label" for="inlineRadioPUT">PUT</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+                        <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    
+                    <div class="col">
+                        <span class="badge text-bg-primary">Function</span>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Select the board option</option>
+                            <option value="/d">Description Board</option>
+                            <option value="/d/pt">Description Point</option>
+                            <option value="/s">Switch State</option> 
+                        </select>
+                        <div id="boardHelp" class="form-text">Select the function that you want from the board with the point (if necessary).</div>
+
+
+                    </div>
+
+                    <div class="col">
+                        <span class="badge text-bg-primary">Point</span>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Select the point</option>
+                            <option value="">Mother Board</option>
+                            <option value="/0">0</option>
+                            <option value="/1">1</option>
+                            <option value="/2">2</option> 
+                            <option value="/3">3</option>
+                            <option value="/4">4</option>
+                            <option value="/5">5</option> 
+                        </select>
+
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="btnSubmitData">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+
+let inputDataBoard = {
+    ipBoard: "bbbb::12:4b00:2f4:ac09",
+    methodCoapBoard: "get",
+    functionBoard: "/s", 
+    pointBoard: "1"
+}
+ 
+
+
+
+
+</script>
+
+</html>
