@@ -23,10 +23,12 @@
                     <div id="boardHelp" class="form-text">Please put your board IP.</div>
                 </div>
                 <div class="mb-3">
+                    <span class="badge text-bg-info">Method</span>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioGET" value="get">
                         <label class="form-check-label" for="inlineRadioGET">GET</label>
                     </div>
+                    
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioPUT" value="put">
                         <label class="form-check-label" for="inlineRadioPUT">PUT</label>
@@ -35,25 +37,26 @@
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
                         <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
                     </div>
+                    <div id="methodHelp" class="form-text">Select the CoAP method.</div>
                 </div>
                 <div class="mb-3 row">
                     
                     <div class="col">
                         <span class="badge text-bg-primary">Function</span>
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select" aria-label="Default select example" id="selectFunction">
                             <option selected>Select the board option</option>
                             <option value="/d">Description Board</option>
                             <option value="/d/pt">Description Point</option>
                             <option value="/s">Switch State</option> 
                         </select>
-                        <div id="boardHelp" class="form-text">Select the function that you want from the board with the point (if necessary).</div>
+                        <div id="functionHelp" class="form-text">Select the function that you want from the board with the point (if necessary).</div>
 
 
                     </div>
 
                     <div class="col">
                         <span class="badge text-bg-primary">Point</span>
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select" aria-label="Default select example" id="selectPoint">
                             <option selected>Select the point</option>
                             <option value="">Mother Board</option>
                             <option value="/0">0</option>
@@ -85,26 +88,21 @@
 
     const btnSubmitData = document.getElementById("btnSubmitData")
     btnSubmitData.addEventListener("click", () => {
-        const boardIP = document.getElementById("BoardInputIP").value
-        const boardMethodGET = document.getElementById(inlineRadioGET)
-        const boardMethodPUT = document.getElementById(inlineRadioPUT)
 
+        const boardIP = document.getElementById("BoardInputIP").value
+        const boardMethod = document.querySelector('input[name="inlineRadioOptions"]:checked').value
+        const boardFunction = document.getElementById("selectFunction").value
+        const boardPoint = document.getElementById("selectPoint").value
 
         const inputDataBoard = {
             ipBoard: boardIP,
-            methodCoapBoard: "get",
-            functionBoard: "/s", 
-            pointBoard: "1"
+            methodCoapBoard: boardMethod,
+            functionBoard: boardFunction, 
+            pointBoard: boardPoint
         }
 
-        alert(inputDataBoard.ipBoard)
+        alert(Object.values(inputDataBoard))
     })
-
-    
-    
-
-
-
 
 </script>
 

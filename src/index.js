@@ -49,9 +49,6 @@ app.get('/', (req, res) => {
   })
   */
  res.render('coapdata', { mockdata })
-
-
-
 })
 
 app.listen(port, () => {
