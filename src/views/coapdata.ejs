@@ -11,7 +11,7 @@
     
     <div class="container">
         <div class="container">
-            <h1 class="text-center"> Projeto IC CoAP </h1>
+            <h1 class="text-center"> Project IC CoAP </h1>
         </div>
 
         <div class="container">
@@ -74,13 +74,34 @@
 
 <script>
 
-let inputDataBoard = {
-    ipBoard: "bbbb::12:4b00:2f4:ac09",
-    methodCoapBoard: "get",
-    functionBoard: "/s", 
-    pointBoard: "1"
-}
- 
+
+    let inputDataBoardTest = {
+        ipBoard: "bbbb::12:4b00:2f4:ac09",
+        methodCoapBoard: "get",
+        functionBoard: "/s", 
+        pointBoard: "1"
+    }
+
+
+    const btnSubmitData = document.getElementById("btnSubmitData")
+    btnSubmitData.addEventListener("click", () => {
+        const boardIP = document.getElementById("BoardInputIP").value
+        const boardMethodGET = document.getElementById(inlineRadioGET)
+        const boardMethodPUT = document.getElementById(inlineRadioPUT)
+
+
+        const inputDataBoard = {
+            ipBoard: boardIP,
+            methodCoapBoard: "get",
+            functionBoard: "/s", 
+            pointBoard: "1"
+        }
+
+        alert(inputDataBoard.ipBoard)
+    })
+
+    
+    
 
 
 
