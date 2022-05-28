@@ -15,22 +15,22 @@
         </div>
 
         <div class="container">
-            <form>
+            <form action="/example" method="POST">
                 <div class="mb-3">
                     <span class="badge text-bg-info">IPV6</span>
                     <label for="BoardInputIP" class="form-label">Board IP</label>
-                    <input type="text" class="form-control" id="BoardInputIP" aria-describedby="boardHelp" placeholder="Example: bbbb::12:4b00:2f4:ac09">
+                    <input type="text" class="form-control" id="BoardInputIP" aria-describedby="boardHelp" placeholder="Example: bbbb::12:4b00:2f4:ac09" name="boardName" required>
                     <div id="boardHelp" class="form-text">Please put your board IP.</div>
                 </div>
                 <div class="mb-3">
                     <span class="badge text-bg-info">Method</span>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioGET" value="get">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioGET" value="get" required>
                         <label class="form-check-label" for="inlineRadioGET">GET</label>
                     </div>
                     
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioPUT" value="put">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioPUT" value="put" >
                         <label class="form-check-label" for="inlineRadioPUT">PUT</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -43,8 +43,8 @@
                     
                     <div class="col">
                         <span class="badge text-bg-primary">Function</span>
-                        <select class="form-select" aria-label="Default select example" id="selectFunction">
-                            <option selected>Select the board option</option>
+                        <select class="form-select" aria-label="Default select example" id="selectFunction" name="selectNfunction" required>
+                            <option value="">Select the board option</option>
                             <option value="/d">Description Board</option>
                             <option value="/d/pt">Description Point</option>
                             <option value="/s">Switch State</option> 
@@ -56,8 +56,8 @@
 
                     <div class="col">
                         <span class="badge text-bg-primary">Point</span>
-                        <select class="form-select" aria-label="Default select example" id="selectPoint">
-                            <option selected>Select the point</option>
+                        <select class="form-select" aria-label="Default select example" id="selectPoint" name="selectNpoint" required>
+                            <option value="">Select the point</option>
                             <option value="">Mother Board</option>
                             <option value="/0">0</option>
                             <option value="/1">1</option>
@@ -72,19 +72,18 @@
                 <button type="submit" class="btn btn-primary" id="btnSubmitData">Submit</button>
             </form>
         </div>
+        <div class="container"></div>
     </div>
 </body>
 
 <script>
 
-
-    let inputDataBoardTest = {
+    /*let inputDataBoardTest = {
         ipBoard: "bbbb::12:4b00:2f4:ac09",
         methodCoapBoard: "get",
         functionBoard: "/s", 
         pointBoard: "1"
     }
-
 
     const btnSubmitData = document.getElementById("btnSubmitData")
     btnSubmitData.addEventListener("click", () => {
@@ -94,15 +93,15 @@
         const boardFunction = document.getElementById("selectFunction").value
         const boardPoint = document.getElementById("selectPoint").value
 
-        const inputDataBoard = {
+        var inputDataBoard = {
             ipBoard: boardIP,
             methodCoapBoard: boardMethod,
             functionBoard: boardFunction, 
             pointBoard: boardPoint
-        }
+        } 
 
-        alert(Object.values(inputDataBoard))
-    })
+        })
+*/
 
 </script>
 

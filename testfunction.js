@@ -1,8 +1,7 @@
-let inputDataBoard = {
-    ipBoard: "bbbb::12:4b00:2f4:ac09",
-    methodCoapBoard: "get",
-    functionBoard: "/s", 
-    pointBoard: "/1",
+let alou = (value1, value2) => {
+    const x = value1
+    const y = value2
+    return x+y
 }
- 
-console.log(inptDataBoard.pathBoard)
+
+console.log(alou(2,3))
